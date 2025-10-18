@@ -1,0 +1,36 @@
+:root {
+  --bg-color: #0b0e20;
+  --txt-color: #d8e4e6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid; */
+}
+
+body {
+  height: max(100vh, 600px);
+  color: var(--txt-color);
+  background-color: var(--bg-color);
+  font-family: Tahoma, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding-top: 40px;
+  text-transform: uppercase;
+}
+
+header>span {
+  font-size: 1.8rem;
+}
+
+header+p {
+  text-align: center;
+  margin-top: 1rem;
+}
