@@ -1,5 +1,0 @@
-const letterData = [
-    {
-        value: "A",
-    },
-]

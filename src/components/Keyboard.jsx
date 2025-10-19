@@ -1,5 +1,5 @@
-export default function Letter({value}) {
+export default function Letter({value, clsxClass, handleClick}) {
     return (
-        <button>{value}</button>
+        <button className={`letter ${clsxClass}`} onClick={() => handleClick(value)}>{value}</button>
     )
 }

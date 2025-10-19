@@ -2,7 +2,6 @@ export default function Header() {
     return (
         <>
         <header>
-            <span>🥽🥽</span>
             <h1>Assembly Endgame</h1>
         </header>
 
