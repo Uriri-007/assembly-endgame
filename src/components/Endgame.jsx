@@ -10,6 +10,7 @@ export default function Endgame() {
     const [currentWord, setCurrentWord] = useState("REACT");
     
     const wrongGuessCount = guessedLetters.filter(letter => !currentWord.includes(letter)).length
+    const isGameOver = currentWord.split("").every(word => guessedLetters.includes(word)) || wrongGuessCount === languages.length - 1
 
     const letterBtns = letterObj.map(letter => {
       const isGuessed = guessedLetters.includes(letter.value)
@@ -29,16 +30,21 @@ export default function Endgame() {
             />
         );
     });
-    const languageLives = languages.map(language => {
-        const styles = {
+    const languageLives = languages.map((language, index) => {
+      const isLangLost = index < wrongGuessCount
+        const aliveStyles = {
             color: language.color,
             backgroundColor: language.backgroundColor
         };
+        const deadStyles = {
+          backgroundColor: "gray",
+          filter: "blur(0.4px)"
+        }
         return (
             <Lives
                 key={language.lang}
-                language={language.lang}
-                styles={styles}
+                language={isLangLost ? "💀" : language.lang}
+                styles={isLangLost ? deadStyles : aliveStyles}
             />
         );
     });
@@ -63,9 +69,9 @@ export default function Endgame() {
             <section className="languages">{languageLives}</section>
             <section className="letter-column">{currentWordBox}</section>
             <section className="letters">{letterBtns}</section>
-            <section className="new-game">
-                <button>New Game{wrongGuessCount}</button>
-            </section>
+            {isGameOver === true && <section className="new-game">
+                <button>New Game</button>
+            </section>}
         </>
     );
 }

@@ -132,24 +132,9 @@ export const languages = [
     color: "#FFFFFF"            
   },
   {
-    lang: "C",
-    backgroundColor: "#A8B9C8",
-    color: "#333333"            
-  },
-  {
     lang: "C#",
     backgroundColor: "#9B0099", 
     color: "#FFFFFF"            
-  },
-  {
-    lang: "C++",
-    backgroundColor: "#00599C",
-    color: "#FFFFFF"            
-  },
-  {
-    lang: "SQL",
-    backgroundColor: "#DDDDDD", 
-    color: "#333333"      
   },
   {
     lang: "Java",
@@ -157,13 +142,13 @@ export const languages = [
     color: "#333333"          
   },
   {
-    lang: "Objective C",
-    backgroundColor: "#438EFF", 
-    color: "#FFFFFF"          
-  },
-  {
     lang: "Ruby",
     backgroundColor: "#CC342D", 
+    color: "#FFFFFF"            
+  },
+  {
+    lang: "Assembly",
+    backgroundColor: "#00599C",
     color: "#FFFFFF"            
   }
 ];
