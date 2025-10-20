@@ -6,6 +6,7 @@
   --btn-deactivated: #b83535;
   --btn-passed: #47d337;
   --btn-not-finished: #2124e1;
+  --dark-trans: #000000ae;
 }
 
 * {
@@ -50,12 +51,13 @@ header {
 
 section.status-display {
   padding: 6px 10px;
-  border: 3px double var(--txt-color);
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100px;
   width: min(400px, 100%);
+  background-color: var(--dark-trans);
 }
 
 section.status-display.won {
@@ -115,10 +117,12 @@ button.letter:nth-of-type(26) {
 
 button.letter.deactivated {
   background-color: var(--btn-deactivated);
+  border: 1px solid;
 }
 
 button.letter.passed {
   background-color: var(--btn-passed);
+  border: 1px solid;
 }
 
 button.letter.not-finished {
@@ -135,6 +139,21 @@ section.languages {
 
 span.language {
   padding: 4px 8px;
+  position: relative;
+}
+
+span.language.lost::before {
+  content: "💀";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125rem;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--dark-trans);
 }
 
 section.letter-column {
@@ -164,4 +183,10 @@ section.new-game>button {
   font-weight: 700;
   font-size: 1.1rem;
   border-radius: 6px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+section.new-game>button.play-again {
+  opacity: 1;
 }
