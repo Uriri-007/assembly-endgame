@@ -33,6 +33,11 @@ body {
 
 div#root {
   padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
 
 header {
@@ -43,25 +48,30 @@ header {
   text-transform: uppercase;
 }
 
-header+p {
-  text-align: center;
-  margin-top: 1rem;
-}
-
 section.status-display {
   padding: 6px 10px;
   border: 3px double var(--txt-color);
-  margin-top: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: min(400px, 100%);
 }
 
-section.status-diaplay>p {
+section.status-display.won {
+  background-color: var(--new-game-btn-bg);
+  color: var(--bg-color);
+}
+
+section.status-display.lost {
+  background-color: var(--btn-deactivated);
+}
+
+section.status-display>p {
   text-align: center;
 }
 
 section.letters {
-  margin-top: 16px;
   padding: 4px 0;
   display: grid;
   grid-template: repeat(3, auto) / repeat(10, auto);
@@ -121,19 +131,13 @@ section.languages {
   justify-content: center;  
   gap: 5px;
   max-width: 500px;
-  margin-top: 16px;
 }
 
 span.language {
   padding: 4px 8px;
 }
 
-span.language.lost::before {
-  
-}
-
 section.letter-column {
-  margin-top: 16px;
   display: flex;
   justify-content: center;
   gap: 2px;
@@ -153,7 +157,6 @@ section.new-game {
 }
 
 section.new-game>button {
-  margin: 16px;
   min-width: 100px;
   padding: 12px 16px;
   background-color: var(--new-game-btn-bg);
